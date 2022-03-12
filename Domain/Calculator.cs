@@ -2,27 +2,27 @@
 
 public class Calculator : ICalculator
 {
-    public CalculationResult Add(Arguments arguments)
+    public CalculationResult Add(CalculationArguments calculationArguments)
     {
-        return new CalculationResult(arguments.A + arguments.B);
+        return new CalculationResult(calculationArguments.A + calculationArguments.B);
     }
 
-    public CalculationResult Divide(Arguments arguments)
+    public CalculationResult Divide(CalculationArguments calculationArguments)
     {
-        return arguments.B switch
+        return calculationArguments.B switch
         {
             0 => new CalculationResult("Cannot divide by zero"),
-            _ => new CalculationResult(arguments.A / arguments.B)
+            _ => new CalculationResult(calculationArguments.A / calculationArguments.B)
         };
     }
 
-    public CalculationResult Multiply(Arguments arguments)
+    public CalculationResult Multiply(CalculationArguments calculationArguments)
     {
-        return new CalculationResult(arguments.A * arguments.B);
+        return new CalculationResult(calculationArguments.A * calculationArguments.B);
     }
 
-    public CalculationResult Subtract(Arguments arguments)
+    public CalculationResult Subtract(CalculationArguments calculationArguments)
     {
-        return new CalculationResult(arguments.A - arguments.B);
+        return new CalculationResult(calculationArguments.A - calculationArguments.B);
     }
 }
